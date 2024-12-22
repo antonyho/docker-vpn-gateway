@@ -12,7 +12,7 @@ services:
       # Persist NordVPN data so you don't have to login every time
       - ./data:/var/lib/nordvpn/data
     environment:
-      - NORDVPN_TOKEN="${NORDVPN_TOKEN}"
-      - TECHNOLOGY=NordLynx
-      - LOCAL_NETWORK="${LOCAL_NETWORK}"
+      - NORDVPN_TOKEN=${NORDVPN_TOKEN}
+      - TECHNOLOGY=${TECHNOLOGY}
+      - LOCAL_NETWORK=${LOCAL_NETWORK}
     restart: unless-stopped
