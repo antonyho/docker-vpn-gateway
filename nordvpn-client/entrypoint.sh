@@ -3,7 +3,7 @@
 set -e
 
 echo "Starting NordVPN daemon..."
-/etc/init.d/nordvpn start
+/etc/init.d/nordvpn start &
 
 echo "Logging in NordVPN..."
 
