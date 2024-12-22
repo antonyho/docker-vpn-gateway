@@ -8,8 +8,6 @@ services:
     # Provide access to TUN device
     devices:
       - /dev/net/tun:/dev/net/tun
-    sysctls:
-      net.ipv4.conf.all.rp_filter: "2"
     volumes:
       # Persist NordVPN data so you don't have to login every time
       - ./data:/var/lib/nordvpn/data

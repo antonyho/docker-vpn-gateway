@@ -11,7 +11,7 @@ sudo modprobe tun
 echo 'tun' | sudo tee -a /etc/modules
 ```
 
-Add IPv4 forward on the host. Add a line to the `/etc/sysctl.conf`.
+Add IPv4 forward on the host. And also set `rp_filter=2` to the host. Add these lines to the `/etc/sysctl.conf`.
 
 Edit it:
 
@@ -23,6 +23,7 @@ Or simply add a line if you are sure that it doesn't exist.
 
 ```
 echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
+echo 'net.ipv4.conf.all.rp_filter=2' >> /etc/sysctl.conf
 ```
 
 Make the configuration effective.
