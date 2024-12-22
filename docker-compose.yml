@@ -4,15 +4,17 @@ services:
     container_name: nordvpn-client
     cap_add:
       - NET_ADMIN
+      - NET_RAW
     # Provide access to TUN device
     devices:
       - /dev/net/tun:/dev/net/tun
-    # Use host networking so the container can manipulate the host’s interfaces
-    network_mode: "host"
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
     volumes:
       # Persist NordVPN data so you don't have to login every time
       - ./data:/var/lib/nordvpn/data
     environment:
       - NORDVPN_TOKEN="${NORDVPN_TOKEN}"
       - TECHNOLOGY=NordLynx
+      - LOCAL_NETWORK="${LOCAL_NETWORK}"
     restart: unless-stopped
