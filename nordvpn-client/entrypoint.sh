@@ -2,8 +2,7 @@
 
 set -e
 
-echo "Starting nordvpnd service..."
-/usr/sbin/nordvpnd &
+echo "Logging in NordVPN..."
 
 nordvpn login --token ${NORDVPN_TOKEN}
 nordvpn set technology ${TECHNOLOGY}
