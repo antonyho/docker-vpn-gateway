@@ -47,6 +47,18 @@ Use your own token from NordVPN and configure it to the environment variable `NO
 
 ### Start the docker containers
 
+Set your NordVPN token to environmental variable.
+```
+export NORDVPN_TOKEN=the_token_from_nordvpn
+```
+
+Or put it into `.env` file in this project root directory.
+```
+# .env file
+NORDVPN_TOKEN=the_token_from_nordvpn
+`
+
+
 ```
 docker-compose up -d
 ```

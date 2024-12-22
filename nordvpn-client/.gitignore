@@ -1,0 +1,2 @@
+# Environmental variables file for docker compose to pick up
+.env
