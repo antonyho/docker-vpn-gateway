@@ -56,7 +56,7 @@ Or put it into `.env` file in this project root directory.
 ```
 # .env file
 NORDVPN_TOKEN=the_token_from_nordvpn
-`
+```
 
 
 ```
