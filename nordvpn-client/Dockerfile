@@ -1,7 +1,8 @@
 FROM debian:bullseye
 
-COPY nordvpn-run /etc/service/nordvpn/run
-RUN chmod +x /etc/service/nordvpn/run
+COPY etc/service /etc/service/
+RUN chmod +x /etc/service/nordvpn/run \
+             /etc/service/nordvpn_init/run
 RUN apt update && apt install -y \
     gnupg2 \
     lsb-release \
