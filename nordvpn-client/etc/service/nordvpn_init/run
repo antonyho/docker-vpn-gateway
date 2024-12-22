@@ -23,7 +23,9 @@ fi
 #nordvpn allowlist add port 22
 
 # Or whitelist your LAN subnet if you want full LAN access:
-nordvpn allowlist add subnet "${LOCAL_NETWORK}"
+if [ -n "${LOCAL_NETWORK}" ]; then
+  nordvpn allowlist add subnet "${LOCAL_NETWORK}"
+fi
 
 
 # Some users like killswitch, autoconnect, etc.
