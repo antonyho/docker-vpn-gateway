@@ -8,6 +8,7 @@ RUN apt update && apt install -y \
     lsb-release \
     runit \
     iproute2 \
+    iptables-persistent \
     wireguard-tools \
     curl \
     && rm -rf /var/lib/apt/lists/*

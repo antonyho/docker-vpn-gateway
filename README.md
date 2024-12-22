@@ -62,3 +62,17 @@ NORDVPN_TOKEN=the_token_from_nordvpn
 ```
 docker-compose up -d
 ```
+
+
+Add iptables routing on the VPN gateway host.
+
+```
+VPN_IF="wg0"  # or tun0/nordlynx
+LAN_IF="eth0"
+
+sudo iptables -t nat -A POSTROUTING -o "$VPN_IF" -j MASQUERADE
+sudo iptables -A FORWARD -i "$LAN_IF" -o "$VPN_IF" -j ACCEPT
+sudo iptables -A FORWARD -i "$VPN_IF" -o "$LAN_IF" -j ACCEPT
+
+sudo netfilter-persistent save
+```
