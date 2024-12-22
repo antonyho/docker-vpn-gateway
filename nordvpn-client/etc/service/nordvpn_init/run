@@ -20,10 +20,10 @@ if [ -n "${TECHNOLOGY}" ]; then
 fi
 
 # Whitelist port 22 (SSH):
-#nordvpn whitelist add port 22
+#nordvpn allowlist add port 22
 
 # Or whitelist your LAN subnet if you want full LAN access:
-nordvpn whitelist add subnet "${LOCAL_NETWORK}"
+nordvpn allowlist add subnet "${LOCAL_NETWORK}"
 
 
 # Some users like killswitch, autoconnect, etc.
