@@ -23,8 +23,8 @@ fi
 #nordvpn whitelist add port 22
 
 # Or whitelist your LAN subnet if you want full LAN access:
-# Suppose your LAN is 192.168.1.x
-nordvpn whitelist add subnet 192.168.0.0/24
+# Suppose your LAN is 192.168.0.x
+nordvpn whitelist add subnet 192.168.0.0/16
 
 
 # Some users like killswitch, autoconnect, etc.
