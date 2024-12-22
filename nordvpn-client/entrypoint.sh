@@ -1,4 +1,9 @@
-#!/bin/sh
+#!/bin/bash
+
+set -e
+
+echo "Starting nordvpnd service..."
+/usr/sbin/nordvpnd &
 
 nordvpn login --token ${NORDVPN_TOKEN}
 nordvpn set technology ${TECHNOLOGY}
