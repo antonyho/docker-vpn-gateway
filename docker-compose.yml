@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  nordvpn:
+    build: ./nordvpn-client
+    container_name: nordvpn-client
+    cap_add:
+      - NET_ADMIN
+    # Provide access to TUN device
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    # Use host networking so the container can manipulate the host’s interfaces
+    network_mode: "host"
+    volumes:
+      # Persist NordVPN data so you don't have to login every time
+      - ./data:/var/lib/nordvpn/data
+    environment:
+      - NORDVPN_TOKEN=YOUR_NORDVPN_TOKEN
+      - TECHNOLOGY=NordLynx
+    restart: unless-stopped
