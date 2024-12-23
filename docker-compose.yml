@@ -3,9 +3,12 @@ services:
     build: ./nordvpn-client
     container_name: nordvpn-client
     network_mode: "host"
-    cap_add:
-      - NET_ADMIN
-      - NET_RAW
+    # Remove privileged if you want to be safe
+    # I'm using it because it is my own image
+    privileged: true
+    #cap_add:
+    #  - NET_ADMIN
+    #  - NET_RAW
     # Provide access to TUN device
     devices:
       - /dev/net/tun:/dev/net/tun
