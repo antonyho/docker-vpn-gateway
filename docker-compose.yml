@@ -16,4 +16,5 @@ services:
       - NORDVPN_TOKEN=${NORDVPN_TOKEN}
       - TECHNOLOGY=${TECHNOLOGY}
       - LOCAL_NETWORK=${LOCAL_NETWORK}
+      - SERVER=${SERVER}
     restart: unless-stopped
