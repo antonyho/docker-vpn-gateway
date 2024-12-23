@@ -5,6 +5,7 @@ services:
     network_mode: "host"
     cap_add:
       - NET_ADMIN
+      - NET_RAW
     # Provide access to TUN device
     devices:
       - /dev/net/tun:/dev/net/tun
