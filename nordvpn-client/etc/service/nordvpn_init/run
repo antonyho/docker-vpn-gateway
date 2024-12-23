@@ -19,6 +19,8 @@ if [ -n "${TECHNOLOGY}" ]; then
   nordvpn set technology "${TECHNOLOGY}"
 fi
 
+nordvpn set lan-discovery enable
+
 # Whitelist port 22 (SSH):
 #nordvpn allowlist add port 22
 
@@ -30,7 +32,7 @@ fi
 
 # Some users like killswitch, autoconnect, etc.
 nordvpn set killswitch on
-nordvpn set autoconnect on
+nordvpn set autoconnect on ${SERVER}
 
 # Connect (no argument = best server, or specify e.g. "Denmark", "Germany", etc.)
 nordvpn connect ${SERVER}
