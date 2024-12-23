@@ -33,7 +33,7 @@ nordvpn set killswitch on
 nordvpn set autoconnect on
 
 # Connect (no argument = best server, or specify e.g. "Denmark", "Germany", etc.)
-nordvpn connect
+nordvpn connect ${SERVER}
 
 # Keep this service from exiting, so runit doesn't constantly restart it
 echo "NordVPN is connected. Service will now idle..."
